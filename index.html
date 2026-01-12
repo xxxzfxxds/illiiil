@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Audio Sync</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="player-container">
+    <audio id="player" controls></audio>
+  </div>
+
+  <button id="toggle-btn">Я — отправитель</button>
+
+  <div id="upload-section" style="display:none;">
+    <input type="file" id="file-input" accept=".mp3">
+    <button id="send-btn">Отправить</button>
+    <button id="back-btn">Назад к прослушиванию</button>
+  </div>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="client.js"></script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+#player-container {
+  margin-bottom: 20px;
+}
+
+audio {
+  width: 80%;
+}
+
+#toggle-btn, #send-btn, #back-btn {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+#upload-section {
+  text-align: center;
+}
