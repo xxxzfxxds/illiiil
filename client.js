@@ -5,6 +5,7 @@ const toggleBtn = document.getElementById('toggle-btn');
 const uploadSection = document.getElementById('upload-section');
 const fileInput = document.getElementById('file-input');
 const sendBtn = document.getElementById('send-btn');
+const stopBtn = document.getElementById('stop-btn'); // Новая кнопка
 const backBtn = document.getElementById('back-btn');
 
 // По умолчанию — получатель
@@ -21,6 +22,7 @@ socket.on('play-track', (url) => {
 
 socket.on('stop-track', () => {
   player.pause();
+  player.currentTime = 0; // перемотка в начало
   player.src = '';
 });
 
@@ -31,12 +33,14 @@ function switchToSender() {
       <h2>Режим отправителя</h2>
       <input type="file" id="file-input" accept=".mp3">
       <button id="send-btn">Отправить</button>
+      <button id="stop-btn">Остановить воспроизведение</button>
       <button id="back-btn">Назад к прослушиванию</button>
     </div>
   `;
 
   const fileInput = document.getElementById('file-input');
   const sendBtn = document.getElementById('send-btn');
+  const stopBtn = document.getElementById('stop-btn');
   const backBtn = document.getElementById('back-btn');
 
   sendBtn.onclick = () => {
@@ -62,6 +66,10 @@ function switchToSender() {
       console.error(err);
       alert("Ошибка при загрузке файла.");
     });
+  };
+
+  stopBtn.onclick = () => {
+    socket.emit('stop-all-tracks');
   };
 
   backBtn.onclick = () => {
