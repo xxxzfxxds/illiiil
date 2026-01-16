@@ -6,16 +6,17 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div id="player-container">
-    <audio id="player" controls></audio>
+  <div id="welcome-screen" style="display:block;">
+    <video id="background-video" autoplay muted loop>
+      <source src="welcome.mp4" type="video/mp4">
+      Ваш браузер не поддерживает видео.
+    </video>
+    <button id="toggle-btn">Я — отправитель</button>
   </div>
 
-  <button id="toggle-btn">Я — отправитель</button>
-
-  <div id="upload-section" style="display:none;">
-    <input type="file" id="file-input" accept=".mp3">
-    <button id="send-btn">Отправить</button>
-    <button id="back-btn">Назад к прослушиванию</button>
+  <!-- Плеер, появляется у получателя -->
+  <div id="player-container" style="display:none;">
+    <audio id="player" controls></audio>
   </div>
 
   <script src="/socket.io/socket.io.js"></script>

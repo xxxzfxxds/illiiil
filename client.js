@@ -80,3 +80,10 @@ function switchToSender() {
 toggleBtn.onclick = () => {
   switchToSender();
 };
+socket.on('play-track', (url) => {
+  document.getElementById('welcome-screen').style.display = 'none';
+  document.getElementById('player-container').style.display = 'block';
+
+  player.src = url;
+  player.play().catch(e => console.error("Autoplay blocked:", e));
+});

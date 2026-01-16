@@ -7,22 +7,30 @@ body {
   align-items: center;
   justify-content: center;
   height: 100vh;
+  background-color: #000;
+}
+
+video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
 }
 
 #player-container {
-  margin-bottom: 20px;
+  margin-top: 20px;
 }
 
 audio {
   width: 80%;
 }
 
-#toggle-btn, #send-btn, #back-btn {
+#toggle-btn, #send-btn, #next-btn, #stop-btn, #back-btn {
   padding: 10px 20px;
   font-size: 16px;
   cursor: pointer;
-}
-
-#upload-section {
-  text-align: center;
+  margin: 5px;
 }
