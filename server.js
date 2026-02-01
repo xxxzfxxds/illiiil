@@ -46,11 +46,6 @@ io.on('connection', (socket) => {
     io.emit('play-track', currentTrack); // всем слушателям
   });
 
-  socket.on('stop-all-tracks', () => {
-    currentTrack = null;
-    io.emit('stop-track'); // остановить у всех
-  });
-
   socket.on('disconnect', () => {
     // Можно добавить очистку, если нужно
   });
